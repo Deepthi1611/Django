@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML file in templates</title>
+    <!-- <link rel="stylesheet" href="../../static/style.css"> -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- in the above line static means we are using a static asset - whenever we use static asset
+     we need to inform template engine that we need to load the static asset -->
+</head>
+<body>
+    <h1>HTML in templates</h1> 
+</body>
+</html>
