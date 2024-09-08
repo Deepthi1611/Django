@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app1' # add this to make the project know that a new app called app1 is added
 ]
 
 MIDDLEWARE = [
@@ -117,7 +118,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-# Add this to change the path of static assets
+# Add this to change the path of static assets and load the static assets
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 
 # Default primary key field type

@@ -1,5 +1,4 @@
-{% extends "layout.html" %}
-{% comment %} {% load static %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,16 +11,6 @@
      we need to inform template engine that we need to load the static asset -->
 </head>
 <body>
-    <h1>HTML in templates</h1> 
+    <h1>Contact</h1> 
 </body>
-</html> {% endcomment %}
-
-{% comment %}extends - specify the template from which we want the content {% endcomment %}
-
-{% block title %}
-Home Page
-{% endblock %}
-
-{% block content %}
-<h1>Index.html</h1>
-{% endblock %}
+</html>

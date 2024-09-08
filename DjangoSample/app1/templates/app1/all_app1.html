@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% comment %} the above line first searches for layout.html in the templates of same app,
+if it is not found - it searches for layout.html in the templates of the root project(in root level)
+because we have set templates folder in settings.py {% endcomment %}
+{% block title %}
+App1
+{% endblock %}
+{% block content %}
+<h1>html in App1</h1>
+{% endblock %}
