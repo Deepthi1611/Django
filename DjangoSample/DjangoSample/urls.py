@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
@@ -27,4 +29,7 @@ urlpatterns = [
     path("__reload__/", include("django_browser_reload.urls")) 
     # path to browser reload
     # this path should always be the last path because this is a heavy path
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# the above line is essential for serving media files when developing your Django application locally. 
+# It makes sure that user-uploaded files can be accessed via URLs that start with MEDIA_URL, 
+# and Django knows where to find those files on the file system (MEDIA_ROOT).

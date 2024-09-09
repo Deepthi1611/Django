@@ -2,9 +2,27 @@
 {% comment %} the above line first searches for layout.html in the templates of same app,
 if it is not found - it searches for layout.html in the templates of the root project(in root level)
 because we have set templates folder in settings.py {% endcomment %}
+{% comment %} {{}} is used for variables and {% %} is used for templates {% endcomment %}
 {% block title %}
 App1
 {% endblock %}
 {% block content %}
 <h1>html in App1</h1>
+
+<div class='grid grid-cols-3 gap-4 m-4'>
+{% for chai in chais %}
+    <div class='p-5 rounded'>
+        <img src="{{chai.image.url}}" class='rounded shadow-lg'>
+        <h3 class='text-2xl font-bold'>{{chai.name}}</h3>
+        {% comment %} chaiDetail is the name we defined in the urls.py,
+        third parameter is the id or something we want to pass to the html Page {% endcomment %}
+        <a href ="{% url 'chaiDetail' chai.id %}">
+            <button class="bg-blue-600 text-white p-2 rounded"> 
+                {{chai.type}} - {{chai.id}}
+            </button>
+        </a>
+    </div>
+{% endfor %}
+</div>
+
 {% endblock %}

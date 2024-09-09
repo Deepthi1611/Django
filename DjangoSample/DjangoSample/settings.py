@@ -136,6 +136,17 @@ STATIC_URL = 'static/'
 # Add this to change the path of static assets and load the static assets
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 
+# This defines the base URL that will serve the media files.
+MEDIA_URL = '/media/'
+# It's the directory on your file system where Django will store files that are uploaded by users through forms or other means.
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+# The MEDIA_ROOT setting specifies where files will be stored,
+# and the MEDIA_URL setting tells Django where to find them when generating URLs for media content.
+# Suppose a user uploads a profile picture through your Django app. 
+# If MEDIA_URL is set to /media/ and MEDIA_ROOT is set to os.path.join(BASE_DIR, 'media'), the file might be stored in a directory like media/profile_pics/ on your server.
+# When you want to display the user's profile picture, you could use something like {{ user.profile_picture.url }}, and Django will generate a URL like /media/profile_pics/user123.jpg to serve the image.
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
