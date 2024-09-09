@@ -23,5 +23,8 @@ urlpatterns = [
     path('', views.home, name = 'home'),
     path('about/', views.about, name = 'about'),
     path('contact/', views.contact, name = 'contact'),
-    path('app1/', include('app1.urls'))
+    path('app1/', include('app1.urls')),
+    path("__reload__/", include("django_browser_reload.urls")) 
+    # path to browser reload
+    # this path should always be the last path because this is a heavy path
 ]

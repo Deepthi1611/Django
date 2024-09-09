@@ -38,8 +38,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app1' # add this to make the project know that a new app called app1 is added
+    'app1', # add this to make the project know that a new app called app1 is added
+    'tailwind',
+    'theme',
+    'django_browser_reload' # to make hot reload accessible(configure settings)
 ]
+
+# name of the tailwind app should be mentioned
+# Configures the Tailwind CSS app for django-tailwind.
+TAILWIND_APP_NAME = 'theme'
+#  Configures internal IPs for debugging tools like django-debug-toolbar
+# Internal ips accepts an array of IPs
+INTERNAL_IPS = ['127.0.0.1']
+# NPM_BIN_PATH is needed by Django-Tailwind to know where the npm binary is located.
+# This binary is responsible for running Node.js commands that process your Tailwind CSS files.
+# Tailwind is node based
+NPM_BIN_PATH = '/Users/deepthi/.nvm/versions/node/v18.19.1/bin/npm'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -49,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_browser_reload.middleware.BrowserReloadMiddleware' # middleware for browser auto reload
 ]
 
 ROOT_URLCONF = 'DjangoSample.urls'
